@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
-[Authorize]
+
   public class MembersController(AppDbContext context):BaseApiController
     {
         [HttpGet]
@@ -19,6 +19,7 @@ namespace API.Controllers;
             
         }
 
+[Authorize]
         [HttpGet("{id}")] //localhost:5001/api/members/bob-id
         public async Task<ActionResult<AppUser>> GetMember(string id)
         {
